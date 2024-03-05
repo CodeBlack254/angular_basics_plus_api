@@ -1,5 +1,13 @@
 <header>
+    <div class="row">
+        
+    </div>
     <h1>{{ title }}</h1>
-    <app-button color="green" text="Add" (click)="toggleAddTask()"></app-button> <!-- like passing properties  -->
+    <!-- hasRoute fxn -> basically show this on this page only  -->
+    <app-button 
+    *ngIf="hasRoute('/')"
+    color= "{{ showAddTask ? 'red' : 'green' }}"
+    text="{{ showAddTask ? 'Close' : 'Add' }}"
+    (click)="toggleAddTask()"></app-button> <!-- like passing properties  -->
   
 </header>
